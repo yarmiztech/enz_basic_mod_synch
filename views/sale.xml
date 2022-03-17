@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <record id="view_partner_form_basic_synch" model="ir.ui.view">
+        <field name="name">res.partner.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="basic_synch_partner"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_form_inherit_syn" model="ir.ui.view">
+        <field name="name">Product Template Inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='barcode']" position="after">
+                <field name="basic_synch_product"/>
+            </xpath>
+        </field>
+      </record>
+
+      <record id="executive_area_wise_forms_inh" model="ir.ui.view">
+        <field name="name">Executive Area Inherit</field>
+        <field name="model">executive.area.wise</field>
+        <field name="inherit_id" ref="enzapps_eway_einvoices.executive_area_wise_forms"/>
+          <field name="arch" type="xml">
+     <xpath expr="//field[@name='name']" position="after">
+                <field name="basic_synch_area"/>
+            </xpath>
+          </field>
+      </record>
+
+</odoo>
